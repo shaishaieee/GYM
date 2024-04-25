@@ -1,0 +1,19 @@
+@use '../abstract' as  *;
+
+.tns-controls {
+  position: absolute;
+  bottom: 5rem;
+  left: 12rem;
+  display: flex ;
+  gap: 2rem;
+  button {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    @include flex(center, center);
+    background-color: coral;
+    border: none;
+   color: $clr-light; 
+
+  }
+}

@@ -1,0 +1,240 @@
+@use "../abstract" as *;
+@use "../base" as *;
+@use "../component" as *;
+@use "../layout" as *;
+@use "../vendor" as *;
+
+body {
+    background: #000;
+}
+
+.main__wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.banner {
+    background: $clr-light;
+    margin: 2.5% 0;
+    border-radius: 5rem;
+    padding: 4rem;
+}
+
+.container {
+    max-width: 160rem;
+    margin: 0 auto;
+}
+
+.header {
+    &__wrapper {
+        @include flex(space-between, center);
+        ul {
+            @include flex(space-between, center);
+            gap: 5rem;
+        }
+    }
+}
+
+.banner__main {
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &__action {
+        justify-self: flex-end;
+        align-self: end;
+        ul {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}
+
+.banner__image {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 3rem;
+    margin-bottom: 5rem;
+    img {
+        @include imgCover(500px, 100%);
+        margin-bottom: 1rem;
+    }
+    &__lg {
+        img {
+            @include imgCover(600px, 100%);
+        }
+    }
+}
+
+.stats {
+    background-color: hsl(0, 0%, 15%);
+    padding: 4rem;
+    color: $clr-light;
+    border-radius: 10rem;
+    &__wrapper {
+        @include grid(4);
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.info__features {
+    background-color: hsl(0, 0%, 15%);
+    @include unevenGrid(2fr 1fr);
+    border-radius: 5rem;
+    overflow: hidden;
+    img {
+        @include imgCover(600px, 100%);
+    }
+
+    .info__grid {
+        @include grid(2, 5rem);
+        margin: 8rem;
+    }
+
+    .info__box {
+        color: $clr-light;
+        display: flex;
+        gap: 2rem;
+        .icon {
+            transform: translateY(1rem);
+            width: 4rem;
+            height: 4rem;
+            background: coral;
+            border-radius: 50%;
+            @include flex(center, center);
+            flex-shrink: 0;
+            i {
+                font-size: 2rem
+            }
+        }
+    }
+}
+
+.trainers {
+    padding: 0 14rem;
+    &__wrapper {
+        @include grid(3, 10rem)
+    }
+    &__card {
+        position: relative;
+        color: $clr-light;
+        border-radius: 5rem;
+        overflow: hidden;
+        img {
+            @include imgCover(600px, 100%)
+        }
+        h3 {
+            position: absolute;
+            bottom: -2rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.247);
+            padding: 3rem;
+            backdrop-filter: blur(5px);
+        }
+    }
+}
+
+
+.slider {
+    background-color: hsl(0, 0%, 15%);
+    padding: 10rem 4rem;
+    color: $clr-light;
+    border-radius: 5rem;
+    margin: 10rem 0;
+    position: relative;
+    &__wrapper {
+        @include unevenGrid(40% 60%)
+    }
+
+    h3 {
+        font-size: clamp(3rem, 10vw, 7rem);
+        line-height: 1.2;
+    }
+
+    &__box {
+        display: flex;
+        gap: 2rem;
+        i {
+            font-size: 5rem;
+        }
+        p {
+            margin-top: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .profile {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            ul {
+                line-height: 1;
+            }
+            li, h4 {
+                margin-bottom: 0;
+            }
+
+            img {
+                border-radius: 50%;
+            }
+            
+        }
+    }
+}
+
+.cta {
+    min-height: 65rem;
+    background-image: url('https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include flex(center, center);
+    &__wrapper {
+        text-align:center ;
+    }
+}
+
+.footer {
+    padding: 10rem 0;
+    color: $clr-light;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1.7fr 1fr 1fr 1fr 1.2fr;
+    }
+
+    &__box:first-child {
+        img {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            @include flex(center, center);
+            gap: 3rem;
+            transform: translateX(-25%);
+            i {
+                font-size: 2rem;
+            }
+        }
+    }
+    &__box {
+        ul {
+            margin-top: 2rem;
+            li {
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                i {
+
+                    font-size: 2rem;
+                }
+                
+            }
+
+
+        }
+    }
+}
